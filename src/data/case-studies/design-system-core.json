@@ -1,0 +1,37 @@
+{
+  "id": "design-system-core",
+  "title": "Design System",
+  "subtitle": "Enterprise component library & documentation",
+  "role": "Design System Architect",
+  "duration": "8 weeks",
+  "stack": ["React", "TypeScript", "Tailwind CSS", "Storybook", "Turborepo"],
+  "problem": "An enterprise software company with 5 product teams was experiencing inconsistent UIs across products, duplicated component code, and slow feature development. Each team had their own button components, form inputs, and modals with different behaviors. Design reviews took hours because every team implemented designs differently. New developers spent weeks understanding component patterns.",
+  "solution": "Built a comprehensive design system from scratch using React and TypeScript with Tailwind CSS for styling. Created 120+ production-ready components with full TypeScript support, accessibility compliance (WCAG 2.1 AA), and comprehensive documentation. Used Turborepo for monorepo management with separate packages for components, tokens, and utilities. Integrated Storybook with visual regression testing and automated documentation generation. Established contribution guidelines and version management strategy.",
+  "outcomes": [
+    "Feature shipping speed increased by 3x across all product teams",
+    "Component duplication eliminated — from 50+ button variants to 1 unified system",
+    "Design QA time reduced from 4 hours to 30 minutes per feature",
+    "100% WCAG 2.1 AA compliance across all components",
+    "Developer satisfaction score increased from 6.2 to 9.1"
+  ],
+  "techHighlights": ["Turborepo", "Tailwind CSS", "Radix UI primitives", "Chromatic visual testing", "Changesets"],
+  "screenshots": [
+    {
+      "path": "/assets/screenshots/design-system-overview.png",
+      "caption": "Design system documentation site with interactive examples",
+      "alt": "Documentation homepage showing component categories and quick start guide"
+    },
+    {
+      "path": "/assets/screenshots/design-system-components.png",
+      "caption": "Component gallery with 120+ production-ready components",
+      "alt": "Grid view of various UI components including buttons, forms, and data displays"
+    },
+    {
+      "path": "/assets/screenshots/design-system-tokens.png",
+      "caption": "Design tokens architecture for colors, spacing, and typography",
+      "alt": "Visual representation of design token system with color palettes and spacing scale"
+    }
+  ],
+  "demoLink": null,
+  "privateRepoInvite": "Public Storybook available. Private repo access requires NDA."
+}

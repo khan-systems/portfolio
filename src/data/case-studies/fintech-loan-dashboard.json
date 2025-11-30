@@ -1,0 +1,37 @@
+{
+  "id": "fintech-loan-dashboard",
+  "title": "Fintech Loan Dashboard",
+  "subtitle": "High-performance dashboard migration & architecture",
+  "role": "Lead Frontend Engineer & UI Architect",
+  "duration": "6 weeks",
+  "stack": ["React", "TypeScript", "Vite", "GraphQL", "Storybook"],
+  "problem": "A Series B fintech startup was struggling with a legacy loan management dashboard built with jQuery and server-side rendering. Page load times exceeded 12 seconds, the bundle was over 4MB, and the codebase was becoming unmaintainable. Customer complaints about slowness were increasing, and the engineering team couldn't ship new features quickly due to technical debt.",
+  "solution": "Led a complete frontend rewrite using React, TypeScript, and Vite. Implemented a component-driven architecture with Storybook for isolated development. Used GraphQL for efficient data fetching with Apollo Client, replacing multiple REST calls. Introduced code-splitting and lazy loading for route-based chunks. Set up a design system with reusable components and established TypeScript patterns for type safety across the application.",
+  "outcomes": [
+    "Time-to-interactive reduced from ~12s to 2.6s",
+    "Bundle size reduced by 72% (from 4.1MB to 1.15MB gzipped)",
+    "Developer onboarding reduced by 40% due to better code organization",
+    "95+ Lighthouse performance score (up from 23)",
+    "Zero regression bugs during 3-week migration period"
+  ],
+  "techHighlights": ["Vite", "Virtualized tables", "Canvas charts", "Apollo Client", "React Query", "Zustand"],
+  "screenshots": [
+    {
+      "path": "/assets/screenshots/fintech-before.png",
+      "caption": "Before — legacy dashboard with slow load times and large bundle",
+      "alt": "Dashboard before performance improvements showing waterfall network requests"
+    },
+    {
+      "path": "/assets/screenshots/fintech-after.png",
+      "caption": "After — optimized React dashboard with 2.6s load time",
+      "alt": "Improved dashboard with fast load times and efficient data fetching"
+    },
+    {
+      "path": "/assets/screenshots/fintech-storybook.png",
+      "caption": "Component library in Storybook for isolated development",
+      "alt": "Storybook interface showing reusable dashboard components"
+    }
+  ],
+  "demoLink": null,
+  "privateRepoInvite": "Available upon request with client approval. Contact for access."
+}

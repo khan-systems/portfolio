@@ -1,0 +1,22 @@
+{
+  "testimonials": [
+    {
+      "name": "Sarah Mitchell",
+      "role": "CTO",
+      "company": "FinanceFlow",
+      "quote": "Junaid transformed our legacy dashboard into a blazing-fast React application. The performance improvements were remarkable — our users noticed immediately. His architectural guidance helped us scale confidently."
+    },
+    {
+      "name": "Michael Chen",
+      "role": "VP of Engineering",
+      "company": "PropSearch Inc",
+      "quote": "Working with Junaid was a game-changer. He didn't just write code; he taught our team best practices and established patterns we still use today. The real estate search UI he built handles millions of listings effortlessly."
+    },
+    {
+      "name": "Emily Rodriguez",
+      "role": "Head of Product",
+      "company": "DesignOps",
+      "quote": "Our design system went from a collection of inconsistent components to a well-documented, type-safe library that all our teams love using. Junaid's attention to developer experience made all the difference."
+    }
+  ]
+}

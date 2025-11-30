@@ -1,0 +1,6 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" fill="#ec4899"/>
+  <text x="600" y="350" font-family="Arial, sans-serif" font-size="48" fill="white" text-anchor="middle" font-weight="bold">REDACTED</text>
+  <text x="600" y="420" font-family="Arial, sans-serif" font-size="24" fill="#fce7f3" text-anchor="middle">Component Gallery</text>
+  <text x="600" y="460" font-family="Arial, sans-serif" font-size="18" fill="#fbcfe8" text-anchor="middle">REPLACE_ME with actual screenshot</text>
+</svg>
