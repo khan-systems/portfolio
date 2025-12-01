@@ -73,7 +73,7 @@ function ContactSection() {
               </p>
               <div className="text-3xl font-bold text-primary dark:text-primary-400 mb-6">$90</div>
               <a
-                href="https://calendly.com/junaidkhan/architecture-session"
+                href="https://calendly.com/junaidkhan-engineering/15-minute-meeting"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary w-full"
@@ -108,7 +108,7 @@ function ContactSection() {
               </p>
               <div className="text-3xl font-bold text-accent dark:text-accent-400 mb-6">Free</div>
               <a
-                href="https://calendly.com/junaidkhan/intro-call"
+                href="https://calendly.com/junaidkhan-engineering/15-minute-meeting"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-secondary w-full"

@@ -1,5 +1,5 @@
 function Header() {
-  const calendlyLink = 'https://calendly.com/junaidkhan/architecture-session' // REPLACE_ME: Add your Calendly link
+  const calendlyLink = 'https://calendly.com/junaidkhan-engineering/15-minute-meeting'
   const mailtoLink = 'mailto:junaidkhan.engineering@gmail.com?subject=Architecture Session Booking'
 
   return (
