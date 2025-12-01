@@ -1,5 +1,5 @@
 function Header() {
-  const calendlyLink = 'https://calendly.com/junaidkhan-engineering/15-minute-meeting'
+  const calendlyLink = 'https://calendly.com/junaidkhan-engineering/60-min-architecture-audit'
   const mailtoLink = 'mailto:junaidkhan.engineering@gmail.com?subject=Architecture Session Booking'
 
   return (

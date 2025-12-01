@@ -73,7 +73,7 @@ function ContactSection() {
               </p>
               <div className="text-3xl font-bold text-primary dark:text-primary-400 mb-6">$90</div>
               <a
-                href="https://calendly.com/junaidkhan-engineering/15-minute-meeting"
+                href="https://calendly.com/junaidkhan-engineering/60-min-architecture-audit"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary w-full"
