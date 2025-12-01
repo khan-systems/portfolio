@@ -45,7 +45,9 @@ describe('CaseStudyCard', () => {
       </BrowserRouter>
     )
 
-    expect(screen.getByText('Improved performance by 50%')).toBeInTheDocument()
+    // Metrics are split into value and label
+    expect(screen.getByText('50%')).toBeInTheDocument()
+    expect(screen.getByText(/Improved performance by/i)).toBeInTheDocument()
   })
 
   it('renders tech stack tags', () => {

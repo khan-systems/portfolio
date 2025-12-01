@@ -12,17 +12,23 @@ describe('Footer', () => {
   it('renders social media links', () => {
     render(<Footer />)
 
-    const githubLink = screen.getByLabelText('GitHub')
-    const emailLink = screen.getByLabelText('Email')
+    const githubLink = screen.getByText('GitHub')
+    const emailLink = screen.getByText('Email')
 
     expect(githubLink).toBeInTheDocument()
+    expect(githubLink).toHaveAttribute('href', 'https://github.com/junaidkhan-engineering')
     expect(emailLink).toBeInTheDocument()
   })
 
   it('renders email contact link', () => {
     render(<Footer />)
-    const emailLink = screen.getByText('Email Me')
+    const emailLink = screen.getByText('Email')
     expect(emailLink).toBeInTheDocument()
-    expect(emailLink).toHaveAttribute('href', 'mailto:junaidkhan.engineering@gmail.com')
+    expect(emailLink.closest('a')).toHaveAttribute('href', 'mailto:junaidkhan.engineering@gmail.com')
+  })
+
+  it('renders brand name', () => {
+    render(<Footer />)
+    expect(screen.getByText('JK')).toBeInTheDocument()
   })
 })
