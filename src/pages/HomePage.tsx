@@ -1,9 +1,10 @@
-import Header from '../components/Header'
-import MetricsBanner from '../components/MetricsBanner'
-import CaseStudyCard from '../components/CaseStudyCard'
-import HowIWork from '../components/HowIWork'
-import Testimonials from '../components/Testimonials'
-import ContactForm from '../components/ContactForm'
+import Hero from '../components/Hero'
+import KpiStrip from '../components/KpiStrip'
+import ServicesSection from '../components/ServicesSection'
+import CaseStudiesSection from '../components/CaseStudiesSection'
+import ProcessTimeline from '../components/ProcessTimeline'
+import TestimonialsSection from '../components/TestimonialsSection'
+import ContactSection from '../components/ContactSection'
 import { CaseStudy } from '../types/case-study'
 
 // Import case studies
@@ -20,28 +21,13 @@ const caseStudies: CaseStudy[] = [
 function HomePage() {
   return (
     <>
-      <Header />
-      <MetricsBanner caseStudies={caseStudies} />
-
-      {/* Case Studies Section */}
-      <section id="case-studies" className="py-16 bg-gray-50">
-        <div className="container-custom">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Featured Work</h2>
-          <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-            Recent client projects demonstrating frontend architecture, performance optimization,
-            and scalable solutions.
-          </p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {caseStudies.map((caseStudy) => (
-              <CaseStudyCard key={caseStudy.id} caseStudy={caseStudy} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <HowIWork />
-      <Testimonials />
-      <ContactForm />
+      <Hero caseStudies={caseStudies} />
+      <KpiStrip />
+      <ServicesSection />
+      <CaseStudiesSection caseStudies={caseStudies} />
+      <ProcessTimeline />
+      <TestimonialsSection />
+      <ContactSection />
     </>
   )
 }

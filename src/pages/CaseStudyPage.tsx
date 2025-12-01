@@ -36,8 +36,8 @@ function CaseStudyPage() {
   if (!caseStudy) {
     return (
       <div className="container-custom py-16 text-center">
-        <h1 className="text-3xl font-bold mb-4">Case Study Not Found</h1>
-        <Link to="/" className="text-primary-600 hover:text-primary-700 underline">
+        <h1 className="text-3xl font-bold text-neutral-900 dark:text-white mb-4">Case Study Not Found</h1>
+        <Link to="/" className="text-primary dark:text-primary-400 hover:text-primary-600 dark:hover:text-primary-300 underline">
           Return to Home
         </Link>
       </div>
@@ -47,12 +47,12 @@ function CaseStudyPage() {
   const mailtoLink = `mailto:junaidkhan.engineering@gmail.com?subject=Private walkthrough request: ${caseStudy.title}`
 
   return (
-    <article className="py-16">
+    <article className="py-16 pt-24">
       <div className="container-custom">
         {/* Back Button */}
         <Link
           to="/"
-          className="inline-flex items-center text-primary-600 hover:text-primary-700 mb-8"
+          className="inline-flex items-center text-primary dark:text-primary-400 hover:text-primary-600 dark:hover:text-primary-300 mb-8 transition-colors"
           aria-label="Back to home"
         >
           <svg
@@ -74,10 +74,10 @@ function CaseStudyPage() {
 
         {/* Header */}
         <header className="mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">{caseStudy.title}</h1>
-          <p className="text-xl text-gray-600 mb-6">{caseStudy.subtitle}</p>
+          <h1 className="text-4xl md:text-5xl font-bold text-neutral-900 dark:text-white mb-4">{caseStudy.title}</h1>
+          <p className="text-xl text-neutral-600 dark:text-neutral-400 mb-6">{caseStudy.subtitle}</p>
 
-          <div className="flex flex-wrap gap-6 text-sm text-gray-700 mb-6">
+          <div className="flex flex-wrap gap-6 text-sm text-neutral-700 dark:text-neutral-300 mb-6">
             <div>
               <span className="font-semibold">Role:</span> {caseStudy.role}
             </div>
@@ -90,7 +90,7 @@ function CaseStudyPage() {
             {caseStudy.stack.map((tech) => (
               <span
                 key={tech}
-                className="px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm"
+                className="px-3 py-1 bg-primary/10 dark:bg-primary/20 text-primary dark:text-primary-400 rounded-full text-sm font-medium"
               >
                 {tech}
               </span>
@@ -100,24 +100,24 @@ function CaseStudyPage() {
 
         {/* Problem */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-4">The Problem</h2>
-          <p className="text-gray-700 leading-relaxed">{caseStudy.problem}</p>
+          <h2 className="text-2xl font-bold text-neutral-900 dark:text-white mb-4">The Problem</h2>
+          <p className="text-neutral-700 dark:text-neutral-300 leading-relaxed">{caseStudy.problem}</p>
         </section>
 
         {/* Solution */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-4">The Solution</h2>
-          <p className="text-gray-700 leading-relaxed">{caseStudy.solution}</p>
+          <h2 className="text-2xl font-bold text-neutral-900 dark:text-white mb-4">The Solution</h2>
+          <p className="text-neutral-700 dark:text-neutral-300 leading-relaxed">{caseStudy.solution}</p>
         </section>
 
         {/* Outcomes */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-4">Key Outcomes</h2>
+          <h2 className="text-2xl font-bold text-neutral-900 dark:text-white mb-4">Key Outcomes</h2>
           <ul className="space-y-3">
             {caseStudy.outcomes.map((outcome, index) => (
               <li key={index} className="flex items-start">
                 <svg
-                  className="w-6 h-6 text-green-500 mr-3 flex-shrink-0"
+                  className="w-6 h-6 text-success dark:text-success mr-3 flex-shrink-0"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -130,7 +130,7 @@ function CaseStudyPage() {
                     d="M5 13l4 4L19 7"
                   />
                 </svg>
-                <span className="text-gray-700">{outcome}</span>
+                <span className="text-neutral-700 dark:text-neutral-300">{outcome}</span>
               </li>
             ))}
           </ul>
@@ -138,12 +138,12 @@ function CaseStudyPage() {
 
         {/* Tech Highlights */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-4">Technical Highlights</h2>
+          <h2 className="text-2xl font-bold text-neutral-900 dark:text-white mb-4">Technical Highlights</h2>
           <div className="flex flex-wrap gap-2">
             {caseStudy.techHighlights.map((tech) => (
               <span
                 key={tech}
-                className="px-4 py-2 bg-gray-100 text-gray-800 rounded-md text-sm font-medium"
+                className="px-4 py-2 bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 rounded-md text-sm font-medium"
               >
                 {tech}
               </span>
@@ -154,17 +154,17 @@ function CaseStudyPage() {
         {/* Screenshots */}
         {caseStudy.screenshots.length > 0 && (
           <section className="mb-12">
-            <h2 className="text-2xl font-bold mb-6">Screenshots</h2>
+            <h2 className="text-2xl font-bold text-neutral-900 dark:text-white mb-6">Screenshots</h2>
             <div className="grid md:grid-cols-2 gap-8">
               {caseStudy.screenshots.map((screenshot, index) => (
-                <figure key={index} className="bg-gray-100 rounded-lg overflow-hidden">
+                <figure key={index} className="bg-neutral-100 dark:bg-neutral-800 rounded-lg overflow-hidden">
                   <img
                     src={screenshot.path}
                     alt={screenshot.alt}
                     className="w-full h-64 object-cover"
                     loading="lazy"
                   />
-                  <figcaption className="p-4 text-sm text-gray-600">
+                  <figcaption className="p-4 text-sm text-neutral-600 dark:text-neutral-400">
                     {screenshot.caption}
                   </figcaption>
                 </figure>
@@ -174,20 +174,20 @@ function CaseStudyPage() {
         )}
 
         {/* CTA */}
-        <section className="bg-primary-50 rounded-lg p-8 text-center">
-          <h2 className="text-2xl font-bold mb-4">Want to Learn More?</h2>
-          <p className="text-gray-700 mb-6 max-w-2xl mx-auto">
+        <section className="bg-primary/5 dark:bg-primary/10 rounded-lg p-8 text-center border border-primary/20 dark:border-primary/30">
+          <h2 className="text-2xl font-bold text-neutral-900 dark:text-white mb-4">Want to Learn More?</h2>
+          <p className="text-neutral-700 dark:text-neutral-300 mb-6 max-w-2xl mx-auto">
             Request a private walkthrough of this project, including architecture decisions, code
             samples, and implementation details.
           </p>
           <a
             href={mailtoLink}
-            className="inline-block bg-primary-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-primary-700 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
+            className="inline-block bg-primary hover:bg-primary-600 text-white px-8 py-3 rounded-lg font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
           >
             Request Private Walkthrough
           </a>
           {caseStudy.privateRepoInvite && (
-            <p className="mt-4 text-sm text-gray-600">
+            <p className="mt-4 text-sm text-neutral-600 dark:text-neutral-400">
               Note: {caseStudy.privateRepoInvite}
             </p>
           )}
