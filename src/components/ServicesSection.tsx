@@ -20,7 +20,6 @@ function ServicesSection() {
       title: 'Architecture Audit',
       description:
         'Deep dive into your React codebase. Get actionable recommendations on performance, scalability, and maintainability.',
-      price: 'From $2,500',
     },
     {
       icon: (
@@ -36,7 +35,6 @@ function ServicesSection() {
       title: 'Migration & Modernization',
       description:
         'Migrate legacy codebases to modern React, TypeScript, and Vite. Zero downtime, battle-tested approach.',
-      price: 'From $8,000',
     },
     {
       icon: (
@@ -52,7 +50,6 @@ function ServicesSection() {
       title: 'Custom Dashboard',
       description:
         'Build data-intensive dashboards with virtualized tables, real-time updates, and optimized rendering.',
-      price: 'From $12,000',
     },
     {
       icon: (
@@ -68,7 +65,6 @@ function ServicesSection() {
       title: 'Design System',
       description:
         'Build reusable component libraries with Storybook, TypeScript, and automated testing.',
-      price: 'From $15,000',
     },
     {
       icon: (
@@ -84,7 +80,6 @@ function ServicesSection() {
       title: 'Performance Sprint',
       description:
         'Intensive 5-day sprint to dramatically improve load times, bundle size, and Core Web Vitals.',
-      price: 'From $5,000',
     },
     {
       icon: (
@@ -100,7 +95,6 @@ function ServicesSection() {
       title: 'Training & Workshops',
       description:
         'Upskill your team with hands-on workshops on React best practices, TypeScript, and modern tooling.',
-      price: 'From $3,000',
     },
   ]
 

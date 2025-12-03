@@ -68,12 +68,14 @@ function Hero({ caseStudies }: HeroProps) {
               variants={itemVariants}
               className="flex flex-col sm:flex-row gap-4"
             >
-              <button
-                onClick={() => scrollToSection('contact')}
-                className="btn-primary text-lg"
+              <a
+                href="https://calendly.com/junaidkhan-engineering/60-min-architecture-audit"
+                className="btn-primary text-lg text-center"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                Book 60-min audit — $90
-              </button>
+                Book a 60-minute architecture session
+              </a>
               <button
                 onClick={() => scrollToSection('case-studies')}
                 className="btn-secondary text-lg"

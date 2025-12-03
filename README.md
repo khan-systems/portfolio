@@ -4,6 +4,8 @@
 
 A lightweight, fast, and accessible single-page application built with **Vite + React + TypeScript + Tailwind CSS**.
 
+> **Note on Pricing:** Public site does not list prices — pricing is discussed during discovery or paid architecture sessions.
+
 ---
 
 ## 🚀 Quick Start

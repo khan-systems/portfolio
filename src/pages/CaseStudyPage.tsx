@@ -110,8 +110,8 @@ function CaseStudyPage() {
               // Handle both string and object outcomes
               const isObject = typeof outcome === 'object' && outcome !== null
               const displayText = isObject 
-                ? `${outcome.metric}: ${outcome.value} - ${outcome.description}`
-                : outcome
+                ? `${(outcome as any).metric}: ${(outcome as any).value} - ${(outcome as any).description}`
+                : String(outcome)
               
               return (
                 <li key={index} className="flex items-start">
@@ -143,8 +143,8 @@ function CaseStudyPage() {
             {caseStudy.techHighlights.map((tech, index) => {
               // Handle both string and object tech highlights
               const isObject = typeof tech === 'object' && tech !== null
-              const displayText = isObject ? (tech.title || tech.name || String(tech)) : tech
-              const description = isObject && tech.description ? tech.description : undefined
+              const displayText = isObject ? ((tech as any).title || (tech as any).name || String(tech)) : String(tech)
+              const description = isObject && (tech as any).description ? (tech as any).description : undefined
               
               return (
                 <span

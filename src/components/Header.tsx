@@ -16,9 +16,11 @@ function Header() {
           <a
             href={calendlyLink}
             className="inline-block bg-white text-primary-700 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary-700"
-            aria-label="Book a 60-minute architecture session for $90"
+            aria-label="Book a 60-minute architecture session"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            Book a 60-minute architecture session — $90
+            Book a 60-minute architecture session
           </a>
           <p className="mt-4 text-primary-200 text-sm">
             Or email me at{' '}

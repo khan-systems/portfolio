@@ -31,7 +31,7 @@ describe('Hero', () => {
 
   it('renders the CTA buttons', () => {
     render(<Hero caseStudies={mockCaseStudies} />)
-    const ctaButton = screen.getByText(/Book 60-min audit/i)
+    const ctaButton = screen.getByText(/Book a 60-minute architecture session/i)
     expect(ctaButton).toBeInTheDocument()
     
     const secondaryCta = screen.getByText(/View case studies/i)

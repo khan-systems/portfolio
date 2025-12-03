@@ -5,7 +5,7 @@ interface Service {
   icon: JSX.Element
   title: string
   description: string
-  price: string
+  price?: string
 }
 
 interface ServiceCardProps {
@@ -35,13 +35,8 @@ function ServiceCard({ service, index }: ServiceCardProps) {
       }
       className="card card-hover p-6 md:p-8"
     >
-      <div className="flex items-start justify-between mb-4">
-        <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-primary/10 dark:bg-primary/20 text-primary dark:text-primary-400">
-          {service.icon}
-        </div>
-        <span className="text-sm font-semibold text-accent dark:text-accent-400 bg-accent/10 dark:bg-accent/20 px-3 py-1 rounded-full">
-          {service.price}
-        </span>
+      <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-primary/10 dark:bg-primary/20 text-primary dark:text-primary-400 mb-4">
+        {service.icon}
       </div>
 
       <h3 className="text-xl font-bold text-neutral-900 dark:text-white mb-3">

@@ -71,14 +71,13 @@ function ContactSection() {
               <p className="text-neutral-600 dark:text-neutral-400 mb-6">
                 Get actionable recommendations on performance, scalability, and code quality.
               </p>
-              <div className="text-3xl font-bold text-primary dark:text-primary-400 mb-6">$90</div>
               <a
                 href="https://calendly.com/junaidkhan-engineering/60-min-architecture-audit"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary w-full"
               >
-                Book now
+                Book a 60-minute architecture session
               </a>
             </motion.div>
 
@@ -106,14 +105,13 @@ function ContactSection() {
               <p className="text-neutral-600 dark:text-neutral-400 mb-6">
                 Quick chat to see if we're a good fit for your project. No obligation.
               </p>
-              <div className="text-3xl font-bold text-accent dark:text-accent-400 mb-6">Free</div>
               <a
                 href="https://calendly.com/junaidkhan-engineering/15-minute-meeting"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-secondary w-full"
               >
-                Schedule call
+                Book a 15-minute intro
               </a>
             </motion.div>
           </div>

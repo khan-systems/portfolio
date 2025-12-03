@@ -8,13 +8,13 @@
 import { CaseStudy } from '../types/case-study'
 
 // Use Vite's import.meta.glob to dynamically import all JSON files
-const caseStudyModules = import.meta.glob<{ default: CaseStudy }>('./case-studies/*.json', { 
+const caseStudyModules = (import.meta as any).glob('./case-studies/*.json', { 
   eager: true 
 })
 
 // Extract the case studies from the modules and sort by a default order
 export const caseStudies: CaseStudy[] = Object.values(caseStudyModules)
-  .map(module => module.default)
+  .map((module: any) => module.default as CaseStudy)
   .sort((a, b) => {
     // Define a custom order if needed
     const order = [
@@ -54,6 +54,6 @@ export function getCaseStudyBySlug(slug: string): CaseStudy | undefined {
 export const caseStudyCount = caseStudies.length
 
 // Log loaded case studies in development
-if (import.meta.env.DEV) {
+if ((import.meta as any).env?.DEV) {
   console.log(`📚 Loaded ${caseStudyCount} case studies:`, caseStudies.map(cs => cs.id))
 }
