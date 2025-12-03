@@ -1,0 +1,2 @@
+# Redirect /portfolio to /portfolio/ (with trailing slash)
+/portfolio  /portfolio/  301

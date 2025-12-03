@@ -13,12 +13,15 @@ function CaseStudyCard({ caseStudy, index = 0, featured = false }: CaseStudyCard
   const prefersReducedMotion = usePrefersReducedMotion()
 
   // Extract metrics from outcomes
-  const extractMetric = (outcome: string) => {
+  const extractMetric = (outcome: string | any) => {
+    // Handle non-string outcomes
+    if (typeof outcome !== 'string') return null
     const match = outcome.match(/(\d+[%smx]?(?:\.\d+)?[smx]?)/)
     return match ? match[1] : null
   }
 
   const metrics = caseStudy.outcomes
+    .filter((outcome) => typeof outcome === 'string') // Ensure it's a string
     .map((outcome) => ({
       value: extractMetric(outcome),
       label: outcome.replace(/(\d+[%smx]?(?:\.\d+)?[smx]?)/, '').trim(),
@@ -49,11 +52,11 @@ function CaseStudyCard({ caseStudy, index = 0, featured = false }: CaseStudyCard
     >
       {/* Preview Image */}
       {caseStudy.screenshots[0] && (
-        <div className={`${featured ? 'h-64' : 'h-48'} bg-neutral-200 dark:bg-neutral-700 overflow-hidden relative group`}>
+        <div className={`${featured ? 'h-64' : 'h-48'} bg-neutral-100 dark:bg-neutral-800 overflow-hidden relative group`}>
           <img
             src={caseStudy.screenshots[0].path}
             alt={caseStudy.screenshots[0].alt}
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            className="w-full h-full object-contain p-4 transition-transform duration-500 group-hover:scale-105"
             loading="lazy"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-neutral-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

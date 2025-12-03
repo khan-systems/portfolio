@@ -10,6 +10,8 @@
     "test": "vitest",
     "format": "prettier --write \"src/**/*.{ts,tsx,css}\"",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "sync:case-studies": "node ./scripts/sync-case-studies.js",
+    "prebuild": "pnpm run sync:case-studies",
     "deploy:gh": "pnpm build && gh-pages -d dist"
   },
   "dependencies": {

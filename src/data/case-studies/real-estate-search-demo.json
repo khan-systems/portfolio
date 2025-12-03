@@ -1,0 +1,49 @@
+{
+  "id": "real-estate-search-demo",
+  "title": "Real Estate Search Platform",
+  "subtitle": "Mobile-first property search with map clustering",
+  "role": "Frontend Engineer",
+  "duration": "4 weeks",
+  "stack": [
+    "React",
+    "TypeScript",
+    "Leaflet",
+    "Tailwind CSS",
+    "Vite"
+  ],
+  "problem": "A real estate agency needed a modern, mobile-first property search experience. Their existing platform was slow, desktop-only, and lacked visual map-based discovery. Users couldn't efficiently browse large property datasets, and mobile traffic (65% of users) had poor engagement. Search latency was over 3 seconds, and the map feature was non-functional on mobile devices.",
+  "solution": "Built a responsive property search platform with React and TypeScript, featuring real-time search with autofill suggestions, interactive map clustering using Leaflet for visual property discovery, and lazy-loaded property cards optimized for mobile. Implemented client-side clustering algorithm to handle 200+ properties smoothly, with search latency under 500ms. Designed mobile-first UI that adapts seamlessly from 400px to desktop widths.",
+  "outcomes": [
+    "Search latency reduced from 3.2s to 420ms (87% improvement)",
+    "Mobile conversion rate increased by 28%",
+    "Mobile user retention improved by 22%",
+    "Property discovery time reduced by 40% with map clustering",
+    "100% responsive — works flawlessly on all device sizes"
+  ],
+  "techHighlights": [
+    "Leaflet Clustering",
+    "React Lazy Loading",
+    "Mobile-First Design",
+    "Real-time Search",
+    "TypeScript"
+  ],
+  "screenshots": [
+    {
+      "path": "/portfolio/assets/screenshots/real-estate-search-demo-realestate-search.png",
+      "caption": "Desktop split view with interactive map and property list",
+      "alt": "Property search interface showing map with clustered markers and filterable property cards"
+    },
+    {
+      "path": "/portfolio/assets/screenshots/real-estate-search-demo-realestate-mobile.png",
+      "caption": "Mobile-optimized stacked layout with touch-friendly controls",
+      "alt": "Mobile view of property search with vertical scrolling and search suggestions"
+    },
+    {
+      "path": "/portfolio/assets/screenshots/real-estate-search-demo-realestate-filters.png",
+      "caption": "Real-time search with autocomplete suggestions",
+      "alt": "Search interface showing live filtering and suggestion dropdown"
+    }
+  ],
+  "demoLink": null,
+  "privateRepoInvite": "Demo available. Full source code upon request."
+}

@@ -95,7 +95,7 @@ function Hero({ caseStudies }: HeroProps) {
           >
             <motion.div
               animate={{
-                y: prefersReducedMotion ? 0 : [-10, 10, -10],
+                y: prefersReducedMotion ? 0 : [0, 5, 0],
               }}
               transition={{
                 duration: 6,
@@ -105,17 +105,17 @@ function Hero({ caseStudies }: HeroProps) {
               className="relative"
             >
               {/* Stacked cards mockup */}
-              <div className="relative h-[500px]">
+              <div className="relative h-auto max-w-sm mx-auto pt-0">
                 {caseStudies.slice(0, 3).map((study, index) => {
                   const screenshot = study.screenshots[0]
                   const zIndex = 30 - index * 10
-                  const rotate = index === 0 ? -2 : index === 1 ? 2 : 0
-                  const yOffset = index * 20
+                  const rotate = index === 0 ? -5 : index === 1 ? 5 : 0
+                  const yOffset = index * 45
 
                   return (
                     <motion.div
                       key={index}
-                      initial={{ opacity: 0, y: 50 }}
+                      initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: yOffset }}
                       transition={{
                         duration: prefersReducedMotion ? 0 : 0.6,
@@ -130,7 +130,7 @@ function Hero({ caseStudies }: HeroProps) {
                         prefersReducedMotion
                           ? {}
                           : {
-                              scale: 1.05,
+                              scale: 1.08,
                               rotate: 0,
                               y: yOffset - 10,
                               zIndex: 50,
@@ -138,13 +138,13 @@ function Hero({ caseStudies }: HeroProps) {
                             }
                       }
                     >
-                      <div className="bg-white dark:bg-neutral-800 p-4 rounded-xl shadow-2xl">
-                        <div className="aspect-video bg-neutral-100 dark:bg-neutral-700 rounded-lg overflow-hidden">
+                      <div className="bg-white dark:bg-neutral-800 p-1.5 rounded-lg shadow-2xl">
+                        <div className="aspect-video bg-neutral-100 dark:bg-neutral-700 rounded overflow-hidden">
                           {screenshot && (
                             <img
                               src={screenshot.path}
                               alt={screenshot.alt}
-                              className="w-full h-full object-cover"
+                              className="w-full h-full object-contain p-1"
                               loading="eager"
                             />
                           )}

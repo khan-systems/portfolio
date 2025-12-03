@@ -1,37 +1,109 @@
 {
   "id": "fintech-loan-dashboard",
-  "title": "Fintech Loan Dashboard",
-  "subtitle": "High-performance dashboard migration & architecture",
-  "role": "Lead Frontend Engineer & UI Architect",
-  "duration": "6 weeks",
-  "stack": ["React", "TypeScript", "Vite", "GraphQL", "Storybook"],
-  "problem": "A Series B fintech startup was struggling with a legacy loan management dashboard built with jQuery and server-side rendering. Page load times exceeded 12 seconds, the bundle was over 4MB, and the codebase was becoming unmaintainable. Customer complaints about slowness were increasing, and the engineering team couldn't ship new features quickly due to technical debt.",
-  "solution": "Led a complete frontend rewrite using React, TypeScript, and Vite. Implemented a component-driven architecture with Storybook for isolated development. Used GraphQL for efficient data fetching with Apollo Client, replacing multiple REST calls. Introduced code-splitting and lazy loading for route-based chunks. Set up a design system with reusable components and established TypeScript patterns for type safety across the application.",
-  "outcomes": [
-    "Time-to-interactive reduced from ~12s to 2.6s",
-    "Bundle size reduced by 72% (from 4.1MB to 1.15MB gzipped)",
-    "Developer onboarding reduced by 40% due to better code organization",
-    "95+ Lighthouse performance score (up from 23)",
-    "Zero regression bugs during 3-week migration period"
+  "title": "Fintech Loan Monitoring Dashboard",
+  "subtitle": "Performance-optimized loan portfolio management system",
+  "role": "Senior Frontend Engineer",
+  "duration": "3 months",
+  "client": "Financial Services Company (NDA)",
+  "stack": [
+    "React",
+    "TypeScript",
+    "Vite",
+    "Tailwind CSS",
+    "React Window",
+    "React Router",
+    "Vitest",
+    "Puppeteer"
   ],
-  "techHighlights": ["Vite", "Virtualized tables", "Canvas charts", "Apollo Client", "React Query", "Zustand"],
-  "screenshots": [
+  "problem": "A financial services company needed a modern, performant dashboard to monitor thousands of loans in real-time. The existing system was slow, had poor UX for filtering and sorting, and couldn't handle large datasets efficiently. Load times exceeded 4 seconds, and the Lighthouse score was below 75.",
+  "solution": "Built a high-performance React dashboard with virtualized table rendering, real-time KPI calculations, and interactive data visualizations. Implemented virtual scrolling to efficiently render 1,000+ rows, memoized expensive computations, and created custom SVG charts to avoid heavy charting library dependencies. Used TypeScript for type safety and Tailwind CSS for rapid, maintainable styling.",
+  "outcomes": [
     {
-      "path": "/assets/screenshots/fintech-before.png",
-      "caption": "Before — legacy dashboard with slow load times and large bundle",
-      "alt": "Dashboard before performance improvements showing waterfall network requests"
+      "metric": "Bundle Size Reduction",
+      "value": "45%",
+      "description": "Reduced from 342KB to 187KB through code splitting and lightweight dependencies"
     },
     {
-      "path": "/assets/screenshots/fintech-after.png",
-      "caption": "After — optimized React dashboard with 2.6s load time",
-      "alt": "Improved dashboard with fast load times and efficient data fetching"
+      "metric": "Performance Score",
+      "value": "+21 points",
+      "description": "Lighthouse score improved from 73 to 94"
     },
     {
-      "path": "/assets/screenshots/fintech-storybook.png",
-      "caption": "Component library in Storybook for isolated development",
-      "alt": "Storybook interface showing reusable dashboard components"
+      "metric": "Load Time",
+      "value": "57% faster",
+      "description": "Initial load time reduced from 4.2s to 1.8s"
+    },
+    {
+      "metric": "Data Handling",
+      "value": "1,000+ rows",
+      "description": "Smooth virtualized scrolling with no performance degradation"
     }
   ],
-  "demoLink": null,
-  "privateRepoInvite": "Available upon request with client approval. Contact for access."
+  "techHighlights": [
+    {
+      "title": "Virtual Scrolling",
+      "description": "Implemented react-window for efficient rendering of large datasets, rendering only visible rows to maintain 60fps scrolling performance."
+    },
+    {
+      "title": "Custom SVG Charts",
+      "description": "Built lightweight, responsive charts using native SVG instead of heavy charting libraries, reducing bundle size by 120KB."
+    },
+    {
+      "title": "Smart Memoization",
+      "description": "Used React.useMemo and useCallback strategically to prevent unnecessary recalculations of filtered data and KPI metrics."
+    },
+    {
+      "title": "Animated KPIs",
+      "description": "Created custom useAnimatedCounter hook with easing functions for smooth, professional number animations on dashboard load."
+    },
+    {
+      "title": "Type-Safe Architecture",
+      "description": "Full TypeScript implementation with strict mode enabled, providing compile-time safety and excellent developer experience."
+    },
+    {
+      "title": "Automated Testing",
+      "description": "Comprehensive test suite with Vitest and Puppeteer for unit tests and automated screenshot generation."
+    }
+  ],
+  "screenshots": [
+    {
+      "alt": "Loan monitoring dashboard hero view with KPI cards",
+      "caption": "Dashboard overview showing real-time KPIs and loan origination trends",
+      "path": "/portfolio/assets/screenshots/fintech-loan-dashboard-fintech-hero.png"
+    },
+    {
+      "alt": "Virtualized loan table with 1000+ rows",
+      "caption": "High-performance virtualized table handling 1,000+ loan records",
+      "path": "/portfolio/assets/screenshots/fintech-loan-dashboard-fintech-table.png"
+    }
+  ],
+  "features": [
+    "Real-time KPI monitoring with animated counters",
+    "Virtualized table for smooth handling of 1,000+ records",
+    "Advanced filtering by date, status, and amount",
+    "Interactive SVG-based data visualizations",
+    "Responsive design optimized for all screen sizes",
+    "Performance metrics dashboard",
+    "Comprehensive test coverage"
+  ],
+  "challenges": [
+    {
+      "challenge": "Table performance with large datasets",
+      "solution": "Implemented virtual scrolling with react-window to render only visible rows, achieving consistent 60fps performance"
+    },
+    {
+      "challenge": "Bundle size from chart libraries",
+      "solution": "Created custom SVG-based charts, reducing dependencies and saving 120KB in bundle size"
+    },
+    {
+      "challenge": "Data security and privacy",
+      "solution": "Implemented data masking for all customer identifiers and generated synthetic data for demos"
+    }
+  ],
+  "testimonial": {
+    "quote": "The new dashboard has transformed how our team monitors loan portfolios. The performance improvements are remarkable, and the intuitive interface has significantly reduced training time for new staff.",
+    "author": "Product Manager",
+    "company": "Financial Services Company (Anonymized)",
+    "role": "Product Manager"
+  }
 }

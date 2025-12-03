@@ -1,0 +1,44 @@
+{
+  "id": "design-system-demo",
+  "title": "Design System Component Library",
+  "subtitle": "Scalable UI component library & developer documentation",
+  "role": "Design System Engineer",
+  "duration": "6 weeks",
+  "stack": [
+    "React",
+    "TypeScript",
+    "Tailwind CSS",
+    "Vite",
+    "Vitest"
+  ],
+  "problem": "A growing product team was struggling with inconsistent UI patterns, duplicated component code across projects, and slow development velocity. Designers spent hours in QA reviewing inconsistent implementations. Developers rebuilt basic components like buttons and inputs for each new feature. Accessibility was an afterthought, leading to compliance issues. The lack of a centralized system resulted in a fragmented user experience.",
+  "solution": "Built a comprehensive design system from the ground up using React and TypeScript with Tailwind CSS for styling. Created a lightweight component gallery (alternative to Storybook) that showcases all components with interactive examples, prop documentation, and variant previews. Implemented design tokens for colors, typography, and spacing to ensure consistency. Each component is fully typed with TypeScript interfaces, supports light/dark themes, and includes accessibility features. Established clear documentation with prop tables and usage examples. Set up automated testing with Vitest to prevent regressions.",
+  "outcomes": [
+    "Development velocity increased by 3x with reusable components",
+    "UI consistency improved — 95% reduction in design QA issues",
+    "Zero accessibility violations in component library (WCAG 2.1 AA)",
+    "Component reusability increased from 20% to 85% across projects",
+    "Developer onboarding time reduced from 2 weeks to 3 days"
+  ],
+  "techHighlights": [
+    "Design Tokens",
+    "TypeScript Generics",
+    "Dark Mode Support",
+    "Vitest Testing",
+    "Puppeteer Screenshots"
+  ],
+  "screenshots": [
+    {
+      "path": "/portfolio/assets/screenshots/design-system-demo-designsystem-hero.png",
+      "caption": "Component gallery homepage with interactive examples and theme toggle",
+      "alt": "Design system gallery showing button variants, inputs, cards, and theme tokens"
+    },
+    {
+      "path": "/portfolio/assets/screenshots/design-system-demo-designsystem-button-grid.png",
+      "caption": "Button component variants with different sizes and states",
+      "alt": "Grid layout of button components showing primary, secondary, ghost, and danger variants"
+    }
+  ],
+  "demoLink": null,
+  "privateRepoInvite": "Source code available upon request. Demo deployable to any static host."
+}

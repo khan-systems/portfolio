@@ -1,23 +1,15 @@
 import { useParams, Link } from 'react-router-dom'
 import { useEffect } from 'react'
-import { CaseStudy } from '../types/case-study'
-
-// Import case studies
-import fintechData from '../data/case-studies/fintech-loan-dashboard.json'
-import designSystemData from '../data/case-studies/design-system-core.json'
-import realEstateData from '../data/case-studies/real-estate-search-ui.json'
-
-const caseStudiesMap: Record<string, CaseStudy> = {
-  'fintech-loan-dashboard': fintechData as CaseStudy,
-  'design-system-core': designSystemData as CaseStudy,
-  'real-estate-search-ui': realEstateData as CaseStudy,
-}
+import { getCaseStudyById } from '../data'
 
 function CaseStudyPage() {
   const { id } = useParams<{ id: string }>()
-  const caseStudy = id ? caseStudiesMap[id] : null
+  const caseStudy = getCaseStudyById(id || '')
 
   useEffect(() => {
+    // Scroll to top when component mounts
+    window.scrollTo(0, 0)
+    
     // Update meta tags for SEO
     if (caseStudy) {
       document.title = `${caseStudy.title} - Junaid Khan`
@@ -114,25 +106,33 @@ function CaseStudyPage() {
         <section className="mb-12">
           <h2 className="text-2xl font-bold text-neutral-900 dark:text-white mb-4">Key Outcomes</h2>
           <ul className="space-y-3">
-            {caseStudy.outcomes.map((outcome, index) => (
-              <li key={index} className="flex items-start">
-                <svg
-                  className="w-6 h-6 text-success dark:text-success mr-3 flex-shrink-0"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M5 13l4 4L19 7"
-                  />
-                </svg>
-                <span className="text-neutral-700 dark:text-neutral-300">{outcome}</span>
-              </li>
-            ))}
+            {caseStudy.outcomes.map((outcome, index) => {
+              // Handle both string and object outcomes
+              const isObject = typeof outcome === 'object' && outcome !== null
+              const displayText = isObject 
+                ? `${outcome.metric}: ${outcome.value} - ${outcome.description}`
+                : outcome
+              
+              return (
+                <li key={index} className="flex items-start">
+                  <svg
+                    className="w-6 h-6 text-success dark:text-success mr-3 flex-shrink-0"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                  <span className="text-neutral-700 dark:text-neutral-300">{displayText}</span>
+                </li>
+              )
+            })}
           </ul>
         </section>
 
@@ -140,14 +140,22 @@ function CaseStudyPage() {
         <section className="mb-12">
           <h2 className="text-2xl font-bold text-neutral-900 dark:text-white mb-4">Technical Highlights</h2>
           <div className="flex flex-wrap gap-2">
-            {caseStudy.techHighlights.map((tech) => (
-              <span
-                key={tech}
-                className="px-4 py-2 bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 rounded-md text-sm font-medium"
-              >
-                {tech}
-              </span>
-            ))}
+            {caseStudy.techHighlights.map((tech, index) => {
+              // Handle both string and object tech highlights
+              const isObject = typeof tech === 'object' && tech !== null
+              const displayText = isObject ? (tech.title || tech.name || String(tech)) : tech
+              const description = isObject && tech.description ? tech.description : undefined
+              
+              return (
+                <span
+                  key={index}
+                  className="px-4 py-2 bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 rounded-md text-sm font-medium"
+                  title={description}
+                >
+                  {displayText}
+                </span>
+              )
+            })}
           </div>
         </section>
 
@@ -155,20 +163,72 @@ function CaseStudyPage() {
         {caseStudy.screenshots.length > 0 && (
           <section className="mb-12">
             <h2 className="text-2xl font-bold text-neutral-900 dark:text-white mb-6">Screenshots</h2>
-            <div className="grid md:grid-cols-2 gap-8">
-              {caseStudy.screenshots.map((screenshot, index) => (
-                <figure key={index} className="bg-neutral-100 dark:bg-neutral-800 rounded-lg overflow-hidden">
-                  <img
-                    src={screenshot.path}
-                    alt={screenshot.alt}
-                    className="w-full h-64 object-cover"
-                    loading="lazy"
-                  />
-                  <figcaption className="p-4 text-sm text-neutral-600 dark:text-neutral-400">
-                    {screenshot.caption}
-                  </figcaption>
-                </figure>
-              ))}
+            <div className="space-y-8">
+              {/* Check if we should group desktop and mobile screenshots */}
+              {caseStudy.screenshots.some(s => s.caption?.toLowerCase().includes('mobile')) ? (
+                <>
+                  {/* Desktop screenshots in a row */}
+                  <div className="grid md:grid-cols-2 gap-6">
+                    {caseStudy.screenshots
+                      .filter(s => !s.caption?.toLowerCase().includes('mobile'))
+                      .map((screenshot, index) => (
+                        <figure key={index} className="bg-neutral-50 dark:bg-neutral-800 rounded-lg overflow-hidden border border-neutral-200 dark:border-neutral-700">
+                          <div className="p-4 bg-neutral-100 dark:bg-neutral-800 flex items-center justify-center min-h-[200px] max-h-[400px]">
+                            <img
+                              src={screenshot.path}
+                              alt={screenshot.alt}
+                              className="w-auto h-auto max-w-full max-h-[350px] object-contain"
+                              loading="lazy"
+                            />
+                          </div>
+                          <figcaption className="p-4 text-sm text-neutral-600 dark:text-neutral-400 bg-white dark:bg-neutral-900">
+                            {screenshot.caption}
+                          </figcaption>
+                        </figure>
+                      ))}
+                  </div>
+                  
+                  {/* Mobile screenshots below */}
+                  <div className="grid md:grid-cols-2 gap-6">
+                    {caseStudy.screenshots
+                      .filter(s => s.caption?.toLowerCase().includes('mobile'))
+                      .map((screenshot, index) => (
+                        <figure key={index} className="bg-neutral-50 dark:bg-neutral-800 rounded-lg overflow-hidden border border-neutral-200 dark:border-neutral-700">
+                          <div className="p-4 bg-neutral-100 dark:bg-neutral-800 flex items-center justify-center min-h-[200px] max-h-[500px]">
+                            <img
+                              src={screenshot.path}
+                              alt={screenshot.alt}
+                              className="w-auto h-auto max-w-full max-h-[450px] object-contain"
+                              loading="lazy"
+                            />
+                          </div>
+                          <figcaption className="p-4 text-sm text-neutral-600 dark:text-neutral-400 bg-white dark:bg-neutral-900">
+                            {screenshot.caption}
+                          </figcaption>
+                        </figure>
+                      ))}
+                  </div>
+                </>
+              ) : (
+                /* Default grid layout for case studies without mobile screenshots */
+                <div className="grid md:grid-cols-2 gap-8">
+                  {caseStudy.screenshots.map((screenshot, index) => (
+                    <figure key={index} className="bg-neutral-50 dark:bg-neutral-800 rounded-lg overflow-hidden border border-neutral-200 dark:border-neutral-700">
+                      <div className="p-4 bg-neutral-100 dark:bg-neutral-800 flex items-center justify-center min-h-[200px] max-h-[400px]">
+                        <img
+                          src={screenshot.path}
+                          alt={screenshot.alt}
+                          className="w-auto h-auto max-w-full max-h-[350px] object-contain"
+                          loading="lazy"
+                        />
+                      </div>
+                      <figcaption className="p-4 text-sm text-neutral-600 dark:text-neutral-400 bg-white dark:bg-neutral-900">
+                        {screenshot.caption}
+                      </figcaption>
+                    </figure>
+                  ))}
+                </div>
+              )}
             </div>
           </section>
         )}
